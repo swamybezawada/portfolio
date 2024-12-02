@@ -1,0 +1,623 @@
+/* General Styles */
+* {
+  font-family: 'Courier New', Courier, monospace;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+  background: rgb(240, 229, 110);
+  color: darkgreen;
+  padding: 0 5rem; /* Adjust the side padding for desktop */
+}
+
+header {
+  position: sticky;
+  background: rgb(240, 229, 110);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  height: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+#logo:hover {
+  transform: scale(1.5);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s ease;
+}
+
+.menu a:hover,
+.menu a.active {
+  background: rgb(163, 240, 163);
+  color: white;
+  box-shadow: 0 0 10px lightgreen, 0 0 20px lightgreen;
+  border-radius: 8px;
+}
+
+/* Responsive Navigation */
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 3px;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    background: rgb(240, 229, 110);
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 5px;
+    width: 100%;
+    z-index: 1001;
+  font-family: 'Courier New', Courier, monospace;
+  }
+
+  .menu.show {
+    display: flex;
+  }
+
+  .menu-icon {
+    display: flex;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  .logo-container {
+    flex: 1;
+  }
+
+  .about-container,
+  .skills-container,
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-photo,
+  .about-text {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Section Styles */
+section {
+  padding: 50px;
+  text-align: center;
+}
+
+#about {
+  padding: 10rem 3rem;
+  background-color: rgb(240, 229, 110);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row; /* Default flex direction for desktop */
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-text {
+  line-height: 1.2;
+  max-width: 600px; /* Ensure text area doesn't stretch too much on wide screens */
+}
+
+.about-text h3 {
+  font-size: 2.5rem; /* Larger text for desktop */
+  color: #011406;
+}
+
+.about-text h4 {
+  color: #f44753;
+  font-weight: 100;
+  font-size: 1.5rem; /* Increase font size for better visibility */
+  
+}
+.about-name{
+  line-height: 0;
+  text-align: start;
+  text-wrap: wrap;
+}
+
+.about-text p {
+  padding: 2rem 0;
+  font-size: 1.1em;
+  color: #555;
+  text-align: left; /* Align text to the left for easier readability on wide screens */
+}
+
+.about-buttons {
+  text-align: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.about-buttons > button {
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  color: rgb(242, 116, 116);
+  cursor: pointer;
+  border-radius: 5px;
+  border-color: white;
+  box-shadow: none;
+}
+
+.about-button1:hover {
+  transform: scale(0.9);
+}
+
+.about-button2:hover {
+  transform: scale(0.9);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(242, 116, 116);
+}
+
+.about-photo img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+.contact-section {
+  padding: 30px;
+  background-color: rgb(240, 229, 110);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contact-section p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  max-width: 600px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: none;
+}
+
+.go-to-top:hover {
+  background-color: #45a049;
+}
+
+#contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#contact a {
+  text-decoration: none;
+  color: rgb(196, 182, 31);
+}
+
+.projects {
+  padding: 10rem 0rem;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem; /* Adjust title size for larger screens */
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+.card-body p {
+  margin: 10px 0;
+}
+
+.card-footer {
+  background: #f9f9f9;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.skills {
+  background-color: rgb(240, 229, 110);
+  padding: 10rem 0rem;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 2.5rem; /* Increase size for better visibility */
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Increased gap for better spacing */
+}
+
+.skill-card {
+  border-radius: 8px;
+  /* background-color: white; */
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.skill-card img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.skill-card h4 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.skill-card p {
+  font-size: 1em;
+  color: #555;
+}
+
+footer {
+  padding: 50px;
+  text-align: center;
+  background-color: rgb(240, 229, 110);
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+/* General Contact Section */
+.contact-section {
+  padding: 30px;
+  background-color: rgb(240, 229, 110);
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.contact-section p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.contact-form {
+  width: 100%;
+  max-width: 600px; /* Max width for desktop, keeps it centered */
+  margin: 0 auto;  /* Center it on larger screens */
+}
+
+.input-row {
+  display: flex;
+  flex-direction: column; /* Stack input fields vertically on mobile */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-row input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+textarea {
+  height: 100px;
+}
+
+.submit-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;  /* Make button full width on mobile */
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 20px;
+  }
+
+  .contact-section p {
+    font-size: 1.2em; /* Adjust font size for mobile */
+  }
+
+  .contact-form {
+    width: 100%; /* Full width for form elements */
+  }
+
+  .input-row {
+    flex-direction: column; /* Stack input fields vertically */
+    gap: 15px; /* Add more space between inputs */
+  }
+
+  .input-row input,
+  textarea {
+    font-size: 1rem; /* Ensure inputs are legible */
+  }
+
+  .submit-button {
+    width: 100%; /* Full-width button on mobile */
+  }
+}
+
+/* Responsive Design for Desktop */
+@media (min-width: 1024px) {
+  .contact-section {
+    padding: 50px; /* Increase padding for larger screens */
+  }
+
+  .contact-form {
+    max-width: 700px; /* Increase the max-width on larger screens */
+  }
+
+  .input-row {
+    flex-direction: row; /* Align input fields horizontally on desktop */
+    gap: 20px;
+  }
+
+  .input-row input,
+  textarea {
+    width: calc(50% - 10px); /* Inputs take half width on larger screens */
+  }
+
+  .submit-button {
+    width: auto; /* Button returns to its normal size */
+  }
+}
+/* Education Section */
+.education-section {
+  padding: 10rem 0;
+  background-color: rgb(240, 229, 110); /* Light background */
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+/* Education Cards Container */
+.education-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Individual Education Card */
+.education-card {
+  background: #fff;
+  border-radius: 8px;
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo inside Education Card */
+.education-logo img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.education-card:hover .education-logo img {
+  transform: scale(1.1); /* Slightly enlarge logo on hover */
+}
+
+/* Description inside Education Card */
+.education-description {
+  text-align: center;
+}
+
+.education-description h3 {
+  font-size: 1.8em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.education-description p {
+  color: #777;
+  font-size: 1.1em;
+}
+
+.education-description .description {
+  font-size: 1em;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+  .education-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .education-card {
+    width: 90%;
+    
+      /* Full width on mobile */
+  }
+  .logo{
+    width: 0.05rem;
+    height:0.05rem;
+  }
+
+  .education-description h3 {
+    font-size: 1.5em; /* Adjust heading size for mobile */
+  }
+
+  .education-description p {
+    font-size: 1em; /* Adjust text size for mobile */
+  }
+}
+
